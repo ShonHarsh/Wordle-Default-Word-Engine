@@ -43,7 +43,15 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "479e65ca-2d60-4a71-acd5-0e3d80558e5a",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test\\Methods\\Test_Calculate_LetterSchema.xaml"
+      }
+    ],
     "saveToCloud": false
   },
   "expressionLanguage": "CSharp",
