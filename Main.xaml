@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1099,2661" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="1099,2842" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -92,7 +92,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="603,2596" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="603,2777" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strWorkbookName">
         <Variable.Default>
@@ -124,18 +124,14 @@
           <Literal x:TypeArguments="x:String" Value="" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="intWordGuesses">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="intWordGuesses" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Creator.Main.Begin;" sap:VirtualizedContainerService.HintSize="541,181" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Main.Begin;" sap:VirtualizedContainerService.HintSize="541,181" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -143,7 +139,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Wordle-Default-Word-Creator.Main.Begin;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">"Wordle-Default-Word-Engine.Main.Begin;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
@@ -215,7 +211,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="541,1449" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="541,1630" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -260,7 +256,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:LogMessage sap2010:Annotation.AnnotationText="This workflow takes a list of letters and trims off all values after the desired length.&#xD;&#xA;&#xD;&#xA;The length is determined by the number of word guesses times the guess length which is a static 5.&#xD;&#xA;&#xD;&#xA;Example: 3 Wordle guesses would be 3 guesses * 5 letters = 15 letter digits to keep.&#xD;&#xA;" DisplayName="DEBUGGING" sap:VirtualizedContainerService.HintSize="388,328" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+      <ui:LogMessage DisplayName="DEBUGGING" sap:VirtualizedContainerService.HintSize="388,181" sap2010:WorkflowViewState.IdRef="LogMessage_9">
+        <ui:LogMessage.Level>
+          <InArgument x:TypeArguments="ui:LogLevel">
+            <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Level>
+        <ui:LogMessage.Message>
+          <InArgument x:TypeArguments="x:Object">
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">string.Join(Environment.NewLine, listLetterSchema)</CSharpValue>
+          </InArgument>
+        </ui:LogMessage.Message>
+      </ui:LogMessage>
+      <ui:LogMessage sap2010:Annotation.AnnotationText="This workflow takes a list of letters and trims off all values after the desired length.&#xA;&#xA;The length is determined by the number of word guesses times the guess length which is a static 5.&#xA;&#xA;Example: 3 Wordle guesses would be 3 guesses * 5 letters = 15 letter digits to keep.&#xA;" DisplayName="DEBUGGING" sap:VirtualizedContainerService.HintSize="388,328" sap2010:WorkflowViewState.IdRef="LogMessage_4">
         <ui:LogMessage.Level>
           <InArgument x:TypeArguments="ui:LogLevel">
             <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_19">UiPath.Core.Activities.LogLevel.Warn</CSharpValue>
@@ -330,7 +338,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Creator.Main.OperationCompleted;" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+      <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Main.OperationCompleted;" sap:VirtualizedContainerService.HintSize="388,164" sap2010:WorkflowViewState.IdRef="LogMessage_1">
         <ui:LogMessage.Level>
           <InArgument x:TypeArguments="ui:LogLevel">
             <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -338,12 +346,12 @@
         </ui:LogMessage.Level>
         <ui:LogMessage.Message>
           <InArgument x:TypeArguments="x:Object">
-            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Wordle-Default-Word-Creator.Main.OperationCompleted;"</CSharpValue>
+            <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">"Wordle-Default-Word-Engine.Main.OperationCompleted;"</CSharpValue>
           </InArgument>
         </ui:LogMessage.Message>
       </ui:LogMessage>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Creator.Main.End;" sap:VirtualizedContainerService.HintSize="541,164" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Main.End;" sap:VirtualizedContainerService.HintSize="541,164" sap2010:WorkflowViewState.IdRef="LogMessage_3">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -351,7 +359,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Wordle-Default-Word-Creator.Main.End;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"Wordle-Default-Word-Engine.Main.End;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>

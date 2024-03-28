@@ -130,7 +130,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Creator.Calculate_LetterSchema.Begin;" sap:VirtualizedContainerService.HintSize="592,181" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Calculate_LetterSchema.Begin;" sap:VirtualizedContainerService.HintSize="592,181" sap2010:WorkflowViewState.IdRef="LogMessage_3">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_49">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -138,7 +138,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">"Wordle-Default-Word-Creator.Calculate_LetterSchema.Begin;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">"Wordle-Default-Word-Engine.Calculate_LetterSchema.Begin;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
@@ -314,7 +314,7 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Creator.Calculate_LetterSchema.End;" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_4">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Calculate_LetterSchema.End;" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_4">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -322,7 +322,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">"Wordle-Default-Word-Creator.Calculate_LetterSchema.End;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_50">"Wordle-Default-Word-Engine.Calculate_LetterSchema.End;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>

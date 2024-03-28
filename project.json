@@ -1,5 +1,5 @@
 {
-  "name": "Wordle-Default-Word-Creator",
+  "name": "Wordle-Default-Word-Engine",
   "projectId": "38567390-d34c-4e15-a317-55808ca98ad7",
   "description": "This robot is in relation to the game Wordle.  It calculates default words to use based on letter frequency.",
   "main": "Main.xaml",
