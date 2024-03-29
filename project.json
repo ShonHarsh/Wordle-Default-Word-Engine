@@ -49,14 +49,14 @@
         "testCaseId": "479e65ca-2d60-4a71-acd5-0e3d80558e5a",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "Test\\Methods\\Test_Calculate_LetterSchema.xaml"
+        "fileName": "Test\\Build_LetterFrequency\\Test_Calculate_LetterSchema.xaml"
       },
       {
         "editingStatus": "InProgress",
         "testCaseId": "00947580-d0cc-44b7-96f4-c7a022e4d42b",
         "testCaseType": "TestCase",
         "executionTemplateInvokeIsolated": false,
-        "fileName": "Test\\Methods\\Test_Print_DataTable.xaml"
+        "fileName": "Test\\Build_LetterFrequency\\Test_Print_DataTable.xaml"
       }
     ],
     "saveToCloud": false
