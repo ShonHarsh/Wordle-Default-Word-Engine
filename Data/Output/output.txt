@@ -1,31 +1,23 @@
-03/23/2024 16:44:48 => [Debug] Debug started for file: Calculate_LetterSchema
-03/23/2024 16:44:48 => [Info] Wordle-Default-Word-Creator execution started
-03/23/2024 16:44:48 => [Info] Wordle-Default-Word-Creator.Read_InputDocument.ReadDataTable;
-03/23/2024 16:44:48 => [Info] Dictionary Data
-[E, 11.85]
-[A, 8]
-[T, 7.9]
-[I, 7.800000000000001]
-[S, 7.5]
-[N, 6.949999999999999]
-[O, 6.8]
-[R, 6.65]
-[L, 4.65]
-[H, 4.199999999999999]
-[D, 4.05]
-[C, 3.4000000000000004]
-[U, 3.0500000000000003]
-[M, 2.55]
-[G, 2.5]
-[P, 2.35]
-[Y, 1.8]
-[F, 1.7999999999999998]
-[B, 1.75]
-[W, 1.6549999999999998]
-[V, 0.99]
-[K, 0.87]
-[Z, 0.257]
-[X, 0.21000000000000002]
-[J, 0.18]
-[Q, 0.14250000000000002]
-03/23/2024 16:44:48 => [Info] Wordle-Default-Word-Creator execution ended in: 00:00:00
+03/29/2024 16:37:49 => [Debug] Debug started for file: Main
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine execution started
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine.Main.Begin;
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine.Build_LetterFrequency.Begin;
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Begin;
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.ReadDataTable;
+03/29/2024 16:37:49 => [Info] Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.End;
+03/29/2024 16:37:50 => [Info] Wordle-Default-Word-Engine.Calculate_LetterSchema.Begin;
+03/29/2024 16:37:50 => [Info] Wordle-Default-Word-Engine.Calculate_LetterSchema.End;
+03/29/2024 16:37:50 => [Info] Wordle-Default-Word-Engine.Build_LetterFrequency.End;
+03/29/2024 16:37:50 => [Info] Wordle-Default-Word-Engine.Build_WordFrequency.Begin;
+03/29/2024 16:37:50 => [Info] Wordle-Default-Word-Engine.Read_InputDocumentWords.Begin;
+03/29/2024 16:37:53 => [Info] Wordle-Default-Word-Engine.Read_InputDocumentWords.End;
+03/29/2024 16:37:53 => [Info] Wordle-Default-Word-Engine.Remove_InvalidWords.Begin;
+03/29/2024 16:48:48 => [Info] Wordle-Default-Word-Engine.Remove_InvalidWords.End;
+03/29/2024 16:48:48 => [Info] Wordle-Default-Word-Engine.Remove_RepeatingLetterWords.Begin;
+03/29/2024 16:51:21 => [Info] Wordle-Default-Word-Engine.Remove_RepeatingLetterWords.End;
+03/29/2024 16:51:21 => [Info] Wordle-Default-Word-Engine.Write_WordListFiltered.Begin;
+03/29/2024 16:51:31 => [Info] Wordle-Default-Word-Engine.Write_WordListFiltered.End;
+03/29/2024 16:51:31 => [Info] Wordle-Default-Word-Engine.Build_WordFrequency.End;
+03/29/2024 16:51:31 => [Info] Wordle-Default-Word-Engine.Main.OperationCompleted;
+03/29/2024 16:51:31 => [Info] Wordle-Default-Word-Engine.Main.End;
+03/29/2024 16:51:31 => [Info] Wordle-Default-Word-Engine execution ended in: 00:13:42
