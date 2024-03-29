@@ -1,19 +1,19 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Read_InputDocument" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Read_InputDocumentLetterFrequency" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_StrFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_StrWorkbookName" Type="InArgument(x:String)" />
     <x:Property Name="out_Dt_LetterFrrequency" Type="OutArgument(sd:DataTable)" />
   </x:Members>
-  <this:Read_InputDocument.in_StrFilePath>
+  <this:Read_InputDocumentLetterFrequency.in_StrFilePath>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
     </InArgument>
-  </this:Read_InputDocument.in_StrFilePath>
-  <this:Read_InputDocument.in_StrWorkbookName>
+  </this:Read_InputDocumentLetterFrequency.in_StrFilePath>
+  <this:Read_InputDocumentLetterFrequency.in_StrWorkbookName>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
     </InArgument>
-  </this:Read_InputDocument.in_StrWorkbookName>
+  </this:Read_InputDocumentLetterFrequency.in_StrWorkbookName>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1099,2651</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
@@ -108,14 +108,14 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Takes the file path and workbook argument, reads the data from the document, and returns a data table." DisplayName="Read_InputDocument" sap:VirtualizedContainerService.HintSize="574,2586" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Takes the file path and workbook argument, reads the data from the document, and returns a data table." DisplayName="Read_InputDocumentLetterFrequency" sap:VirtualizedContainerService.HintSize="574,2586" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocument.Begin;" sap:VirtualizedContainerService.HintSize="512,181" sap2010:WorkflowViewState.IdRef="LogMessage_3">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Begin;" sap:VirtualizedContainerService.HintSize="512,181" sap2010:WorkflowViewState.IdRef="LogMessage_3">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_24">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -123,7 +123,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Wordle-Default-Word-Engine.Read_InputDocument.Begin;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Begin;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
@@ -161,9 +161,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocument.Exception.FilePath;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
+            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.FilePath;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_1">
               <InArgument x:TypeArguments="s:Exception">
-                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocument.Exception.FilePath;")</CSharpValue>
+                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.FilePath;")</CSharpValue>
               </InArgument>
             </Throw>
           </Sequence>
@@ -192,9 +192,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocument.Exception.WorksheetName;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2">
+            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.WorksheetName;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_2">
               <InArgument x:TypeArguments="s:Exception">
-                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocument.Exception.WorksheetName;")</CSharpValue>
+                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.WorksheetName;")</CSharpValue>
               </InArgument>
             </Throw>
           </Sequence>
@@ -254,9 +254,9 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocument.Exception.DataTable;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_3">
+            <Throw DisplayName="Throw Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.DataTable;" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="Throw_3">
               <InArgument x:TypeArguments="s:Exception">
-                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocument.Exception.DataTable;")</CSharpValue>
+                <CSharpValue x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">new BusinessRuleException("Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.Exception.DataTable;")</CSharpValue>
               </InArgument>
             </Throw>
           </Sequence>
@@ -269,7 +269,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocument.ReadDataTable;" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+            <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.ReadDataTable;" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_1">
               <ui:LogMessage.Level>
                 <InArgument x:TypeArguments="ui:LogLevel">
                   <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -277,7 +277,7 @@
               </ui:LogMessage.Level>
               <ui:LogMessage.Message>
                 <InArgument x:TypeArguments="x:Object">
-                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Wordle-Default-Word-Engine.Read_InputDocument.ReadDataTable;"</CSharpValue>
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">"Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.ReadDataTable;"</CSharpValue>
                 </InArgument>
               </ui:LogMessage.Message>
             </ui:LogMessage>
@@ -285,7 +285,7 @@
         </If.Else>
       </If>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocument.End;" sap:VirtualizedContainerService.HintSize="512,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.End;" sap:VirtualizedContainerService.HintSize="512,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -293,7 +293,7 @@
       </ui:LogMessage.Level>
       <ui:LogMessage.Message>
         <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Wordle-Default-Word-Engine.Read_InputDocument.End;"</CSharpValue>
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"Wordle-Default-Word-Engine.Read_InputDocumentLetterFrequency.End;"</CSharpValue>
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
