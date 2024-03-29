@@ -1,9 +1,9 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Calculate_LetterSchema" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Dt_LetterFrequency" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="out_ListLetterSchema" Type="OutArgument(scg:List(x:String))" />
     <x:Property Name="in_StrColumnNameValue" Type="InArgument(x:String)" />
     <x:Property Name="in_StrColumnNameKey" Type="InArgument(x:String)" />
+    <x:Property Name="out_DictLetterFrequency" Type="OutArgument(scg:Dictionary(x:String, x:Double))" />
   </x:Members>
   <this:Calculate_LetterSchema.in_Dt_LetterFrequency>
     <InArgument x:TypeArguments="sd:DataTable">
@@ -21,7 +21,7 @@
     </InArgument>
   </this:Calculate_LetterSchema.in_StrColumnNameKey>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1099,2444</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1099,2478</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -116,14 +116,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This worrkflow takes a data table of the letter frequency data, the column name for the key and value ,and retuns a list of the letters in order by value descending." DisplayName="Calculate_LetterSchema" sap:VirtualizedContainerService.HintSize="654,2379" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Double)" Name="dictLetterFrequency">
-        <Variable.Default>
-          <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">new Dictionary&lt;string, double&gt;()</CSharpValue>
-        </Variable.Default>
-      </Variable>
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="This worrkflow takes a data table of the letter frequency data, the column name for the key and value ,and retuns a list of the letters in order by value descending." DisplayName="Calculate_LetterSchema" sap:VirtualizedContainerService.HintSize="654,2413" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -142,13 +135,31 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="592,369" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="592,525" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Remove all columns save for the argument key and value columns which are the Letter and Value respectivly." DisplayName="Filter Data Table Remove Columns" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="388,241" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
+      <ui:MultipleAssign DisplayName="Multiple Assign Initialization" sap:VirtualizedContainerService.HintSize="479,156" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+                  <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">out_DictLetterFrequency</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+                  <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_52">new Dictionary&lt;string, double&gt;()</CSharpValue>
+                </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
+      <ui:FilterDataTable sap2010:Annotation.AnnotationText="Remove all columns save for the argument key and value columns which are the Letter and Value respectivly." DisplayName="Filter Data Table Remove Columns" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="479,241" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" SelectColumnsMode="Keep">
         <ui:FilterDataTable.DataTable>
           <InArgument x:TypeArguments="sd:DataTable">
             <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">in_Dt_LetterFrequency</CSharpValue>
@@ -181,30 +192,26 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:FilterDataTable>
     </Sequence>
-    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="592,1260" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="592,1138" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table Letter Frequency" sap:VirtualizedContainerService.HintSize="530,1132" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Data Table Letter Frequency" sap:VirtualizedContainerService.HintSize="530,1010" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body For Each DataTable Row" sap:VirtualizedContainerService.HintSize="496,945" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Body For Each DataTable Row" sap:VirtualizedContainerService.HintSize="496,823" sap2010:WorkflowViewState.IdRef="Sequence_9">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:String" Name="strKey">
                   <Variable.Default>
                     <Literal x:TypeArguments="x:String" Value="" />
                   </Variable.Default>
                 </Variable>
-                <Variable x:TypeArguments="x:Double" Name="doubleValue">
-                  <Variable.Default>
-                    <Literal x:TypeArguments="x:Double" />
-                  </Variable.Default>
-                </Variable>
+                <Variable x:TypeArguments="x:Double" Default="0" Name="doubleValue" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -255,10 +262,10 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:GetRowItem>
-              <Assign sap2010:Annotation.AnnotationText="Assign the row items to a dictionary.  dictLetterFrequency[strKey] = doubleValue.&#xD;&#xA;&#xD;&#xA;Trying to use the SortDataTable activity sorted the values as strings, thus the 11 was before 2.&#xD;&#xA;As a result, this dictionary method is used as the values can be stored as doubles which sorts correctly." DisplayName="Assign Dictionary" sap:VirtualizedContainerService.HintSize="434,239" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign sap2010:Annotation.AnnotationText="Assign the row items to a dictionary.  dictLetterFrequency[strKey] = doubleValue.&#xA;&#xA;Trying to use the SortDataTable activity sorted the values as strings, thus the 11 was before 2.&#xA;As a result, this dictionary method is used as the values can be stored as doubles which sorts correctly." DisplayName="Assign Dictionary" sap:VirtualizedContainerService.HintSize="434,222" sap2010:WorkflowViewState.IdRef="Assign_2">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Double">
-                    <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">dictLetterFrequency[strKey]</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:Double" sap2010:WorkflowViewState.IdRef="CSharpReference`1_15">out_DictLetterFrequency[strKey]</CSharpReference>
                   </OutArgument>
                 </Assign.To>
                 <Assign.Value>
@@ -272,18 +279,6 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </Assign>
-              <Assign DisplayName="Assign Sort By Value" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_3">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
-                    <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">dictLetterFrequency</CSharpReference>
-                  </OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
-                    <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">dictLetterFrequency.OrderByDescending(pair =&gt; pair.Value).ToDictionary(pair =&gt; pair.Key, pair =&gt; pair.Value)</CSharpValue>
-                  </InArgument>
-                </Assign.Value>
-              </Assign>
             </Sequence>
           </ActivityAction>
         </ui:ForEachRow.Body>
@@ -294,24 +289,28 @@
         </ui:ForEachRow.DataTable>
       </ui:ForEachRow>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Convert the dictionary keys to a list for the out argument.  The values are only required to order the letters by their frequency." DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="592,275" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="592,275" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign List Keys" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign sap2010:Annotation.AnnotationText="out_DictLetterFrequency.OrderByDescending(pair =&gt; pair.Value).ToDictionary(pair =&gt; pair.Key, pair =&gt; pair.Value)" DisplayName="Assign Sort By Value" sap:VirtualizedContainerService.HintSize="434,147" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
-          <OutArgument x:TypeArguments="scg:List(x:String)">
-            <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">out_ListLetterSchema</CSharpReference>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+            <CSharpReference x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">out_DictLetterFrequency</CSharpReference>
           </OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="scg:List(x:String)">
-            <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">dictLetterFrequency.Keys.ToList()</CSharpValue>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Double)">
+            <CSharpValue x:TypeArguments="scg:Dictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_43">out_DictLetterFrequency.OrderByDescending(pair =&gt; pair.Value).ToDictionary(pair =&gt; pair.Key, pair =&gt; pair.Value)</CSharpValue>
           </InArgument>
         </Assign.Value>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
       </Assign>
     </Sequence>
     <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Calculate_LetterSchema.End;" sap:VirtualizedContainerService.HintSize="592,164" sap2010:WorkflowViewState.IdRef="LogMessage_4">
