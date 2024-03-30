@@ -9,8 +9,10 @@ This robot is in regards to the game Wordle.  It aims to create guesses to use i
 **Note** This routine reads over 320k records and processes them so it is expensive.  On a Intel i9 3Ghz it took 13:42 minutes.
 
 #### //ToDo
+1. Filter words based on Wordle validity by testing words
 1. Use the frequency dictionary in the output from the Build_WordFrequency routine in order to give each word a weight.
 1. Calculate unique letter guess groups based on weight.
+1. Test words for validity against the game and remove words that are not accepted
 
 ### GETTING STARTED
 
