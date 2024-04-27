@@ -1,21 +1,21 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Remove_InvalidWords" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_StrColumnName" Type="InArgument(x:String)" />
     <x:Property Name="in_Dt_Words" Type="InArgument(sd:DataTable)" />
-    <x:Property Name="out_ListWords" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="out_Words" Type="OutArgument(scg:List(x:String))" />
+    <x:Property Name="in_ColumnName" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Remove_InvalidWords.in_StrColumnName>
-    <InArgument x:TypeArguments="x:String">
-      <Literal x:TypeArguments="x:String" Value="" />
-    </InArgument>
-  </this:Remove_InvalidWords.in_StrColumnName>
   <this:Remove_InvalidWords.in_Dt_Words>
     <InArgument x:TypeArguments="sd:DataTable">
       <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_51">new DataTable()</CSharpValue>
     </InArgument>
   </this:Remove_InvalidWords.in_Dt_Words>
+  <this:Remove_InvalidWords.in_ColumnName>
+    <InArgument x:TypeArguments="x:String">
+      <Literal x:TypeArguments="x:String" Value="" />
+    </InArgument>
+  </this:Remove_InvalidWords.in_ColumnName>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1099,1925</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1036,1925</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -137,7 +137,7 @@
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
               <ui:AssignOperation.To>
                 <OutArgument x:TypeArguments="scg:List(x:String)">
-                  <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">out_ListWords</CSharpReference>
+                  <CSharpReference x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">out_Words</CSharpReference>
                 </OutArgument>
               </ui:AssignOperation.To>
               <ui:AssignOperation.Value>
@@ -165,7 +165,7 @@
             </ActivityAction.Argument>
             <Sequence DisplayName="Body Filter Words" sap:VirtualizedContainerService.HintSize="512,772" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:String" Name="strCellValue">
+                <Variable x:TypeArguments="x:String" Name="cellValue">
                   <Variable.Default>
                     <Literal x:TypeArguments="x:String" Value="" />
                   </Variable.Default>
@@ -184,14 +184,14 @@
                 </ui:GetRowItem.Row>
                 <ui:GetRowItem.Value>
                   <OutArgument x:TypeArguments="x:String">
-                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">strCellValue</CSharpReference>
+                    <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">cellValue</CSharpReference>
                   </OutArgument>
                 </ui:GetRowItem.Value>
               </ui:GetRowItem>
               <If DisplayName="If Validate Word Length" sap:VirtualizedContainerService.HintSize="450,460" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
-                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">strCellValue.Length == 5</CSharpValue>
+                    <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">cellValue.Length == 5</CSharpValue>
                   </InArgument>
                 </If.Condition>
                 <If.Then>
@@ -204,13 +204,13 @@
                     <uasc:AppendItemToCollection x:TypeArguments="x:String" DisplayName="Append Items to Collection List Words" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
                       <uasc:AppendItemToCollection.Collection>
                         <InArgument x:TypeArguments="scg:ICollection(x:String)">
-                          <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">out_ListWords</CSharpValue>
+                          <CSharpValue x:TypeArguments="scg:ICollection(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_47">out_Words</CSharpValue>
                         </InArgument>
                       </uasc:AppendItemToCollection.Collection>
                       <uasc:AppendItemToCollection.Items>
                         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                           <InArgument x:TypeArguments="x:String">
-                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">strCellValue</CSharpValue>
+                            <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_48">cellValue</CSharpValue>
                           </InArgument>
                         </scg:List>
                       </uasc:AppendItemToCollection.Items>
