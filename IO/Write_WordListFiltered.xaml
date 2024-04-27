@@ -1,26 +1,26 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Write_WordListFiltered" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="in_StrFilePath" Type="InArgument(x:String)" />
-    <x:Property Name="in_ListWords" Type="InArgument(scg:List(x:String))" />
-    <x:Property Name="in_StrWorkbookName" Type="InArgument(x:String)" />
+    <x:Property Name="in_FilePath" Type="InArgument(x:String)" />
+    <x:Property Name="in_Words" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_WorkbookName" Type="InArgument(x:String)" />
   </x:Members>
-  <this:Write_WordListFiltered.in_StrFilePath>
+  <this:Write_WordListFiltered.in_FilePath>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
     </InArgument>
-  </this:Write_WordListFiltered.in_StrFilePath>
-  <this:Write_WordListFiltered.in_ListWords>
+  </this:Write_WordListFiltered.in_FilePath>
+  <this:Write_WordListFiltered.in_Words>
     <InArgument x:TypeArguments="scg:List(x:String)">
       <CSharpValue x:TypeArguments="scg:List(x:String)" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">new List&lt;String&gt;()</CSharpValue>
     </InArgument>
-  </this:Write_WordListFiltered.in_ListWords>
-  <this:Write_WordListFiltered.in_StrWorkbookName>
+  </this:Write_WordListFiltered.in_Words>
+  <this:Write_WordListFiltered.in_WorkbookName>
     <InArgument x:TypeArguments="x:String">
       <Literal x:TypeArguments="x:String" Value="" />
     </InArgument>
-  </this:Write_WordListFiltered.in_StrWorkbookName>
+  </this:Write_WordListFiltered.in_WorkbookName>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1099,1896</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1036,1896</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -140,7 +140,7 @@
     </ui:LogMessage>
     <Sequence DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="512,751" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <Sequence.Variables>
-        <Variable x:TypeArguments="x:Int32" Name="intIndex" />
+        <Variable x:TypeArguments="x:Int32" Name="index" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -188,12 +188,12 @@
         </ui:ForEach.Body>
         <ui:ForEach.CurrentIndex>
           <OutArgument x:TypeArguments="x:Int32">
-            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">intIndex</CSharpReference>
+            <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">index</CSharpReference>
           </OutArgument>
         </ui:ForEach.CurrentIndex>
         <ui:ForEach.Values>
           <InArgument x:TypeArguments="sc:IEnumerable">
-            <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">in_ListWords</CSharpValue>
+            <CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">in_Words</CSharpValue>
           </InArgument>
         </ui:ForEach.Values>
       </ui:ForEach>
@@ -214,12 +214,12 @@
             </ui:WriteRange.DataTable>
             <ui:WriteRange.SheetName>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_StrWorkbookName</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">in_WorkbookName</CSharpValue>
               </InArgument>
             </ui:WriteRange.SheetName>
             <ui:WriteRange.WorkbookPath>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">in_StrFilePath</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">in_FilePath</CSharpValue>
               </InArgument>
             </ui:WriteRange.WorkbookPath>
           </ui:WriteRange>
