@@ -9,7 +9,7 @@
     </InArgument>
   </this:Validate_WordWordleGame.in_Word>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1036,1896</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1101,4993</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -130,13 +130,20 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Validate_WordWordleGame" sap:VirtualizedContainerService.HintSize="558,1023" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Validate_WordWordleGame" sap:VirtualizedContainerService.HintSize="822,4928" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="webAddress">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String" Value="" />
+        </Variable.Default>
+      </Variable>
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Validate_WordWordleGame.Begin;" sap:VirtualizedContainerService.HintSize="496,181" sap2010:WorkflowViewState.IdRef="LogMessage_1">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Validate_WordWordleGame.Begin;" sap:VirtualizedContainerService.HintSize="760,173" sap2010:WorkflowViewState.IdRef="LogMessage_1">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
@@ -148,56 +155,61 @@
         </InArgument>
       </ui:LogMessage.Message>
     </ui:LogMessage>
-    <Sequence DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="496,233" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sequence Initialization" sap:VirtualizedContainerService.HintSize="760,290" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign DisplayName="Assign Initialization" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_15">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Boolean">
-            <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">out_IsValid</CSharpReference>
-          </OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-        </Assign.Value>
-      </Assign>
+      <ui:MultipleAssign DisplayName="Multiple Assign Initialization" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+        <ui:MultipleAssign.AssignOperations>
+          <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">out_IsValid</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">webAddress</CSharpReference>
+                </OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">https://www.nytimes.com/games/wordle/index.html</InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+          </scg:List>
+        </ui:MultipleAssign.AssignOperations>
+      </ui:MultipleAssign>
     </Sequence>
-    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="496,65" sap2010:WorkflowViewState.IdRef="Sequence_75">
+    <Sequence DisplayName="Sequence Operation" sap:VirtualizedContainerService.HintSize="760,3929" sap2010:WorkflowViewState.IdRef="Sequence_75">
       <Sequence.Variables>
         <Variable x:TypeArguments="ui:UiElement" Name="browserWindow" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Wordle - The New York Times" sap:VirtualizedContainerService.HintSize="846,8422" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" ScopeGuid="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V2">
+      <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Wordle - The New York Times" sap:VirtualizedContainerService.HintSize="698,3809" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsIncognito="True" OpenMode="Always" ScopeGuid="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V2">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence sap2010:Annotation.AnnotationText="The introduction windows take a few seconds to detect.  Thus this method only checks for the next window if the previous one did not display.&#xD;&#xA;&#xD;&#xA;Introduction Windows:&#xD;&#xA;How To Play&#xD;&#xA;Hard Mode&#xD;&#xA;How To Play Small&#xD;&#xA;&#xD;&#xA;" DisplayName="Do Browser Operations" sap:VirtualizedContainerService.HintSize="812,8142" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <Sequence sap2010:Annotation.AnnotationText="The introduction windows take a few seconds to detect.  Thus this method only checks for the next window if the previous one did not display.&#xA;&#xA;Introduction Windows:&#xA;How To Play&#xA;Hard Mode&#xA;How To Play Small&#xA;&#xA;" DisplayName="Do Browser Operations" sap:VirtualizedContainerService.HintSize="664,3569" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <Sequence.Variables>
-                <Variable x:TypeArguments="x:Boolean" Name="isDisplayedHowToPlayDefault">
-                  <Variable.Default>
-                    <Literal x:TypeArguments="x:Boolean" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="x:Boolean" Name="isDisplayedHardMode">
-                  <Variable.Default>
-                    <Literal x:TypeArguments="x:Boolean" />
-                  </Variable.Default>
-                </Variable>
-                <Variable x:TypeArguments="x:Boolean" Name="isDisplayedPlay">
-                  <Variable.Default>
-                    <Literal x:TypeArguments="x:Boolean" />
-                  </Variable.Default>
-                </Variable>
+                <Variable x:TypeArguments="x:Boolean" Default="False" Name="isDisplayedHowToPlayDefault" />
+                <Variable x:TypeArguments="x:Boolean" Default="False" Name="isDisplayedHardMode" />
+                <Variable x:TypeArguments="x:Boolean" Default="False" Name="isDisplayedPlay" />
+                <Variable x:TypeArguments="ui:UiElement" Name="isDisplayedPlayHomeButton" />
               </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -205,21 +217,21 @@
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Sequence Windows" sap:VirtualizedContainerService.HintSize="750,5242" sap2010:WorkflowViewState.IdRef="Sequence_47">
+              <Sequence DisplayName="Sequence Windows" sap:VirtualizedContainerService.HintSize="602,1616" sap2010:WorkflowViewState.IdRef="Sequence_47">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NCheckState DisplayName="Check App State 'How to playLog inPlay'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="688,651" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
+                <uix:NCheckState sap2010:Annotation.AnnotationText="Default - How to play | Log in | Play" DisplayName="Check App State 'How to playLog inPlay'" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,666" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target Appears Play" sap:VirtualizedContainerService.HintSize="496,394" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                    <Sequence DisplayName="Target Appears Play" sap:VirtualizedContainerService.HintSize="496,386" sap2010:WorkflowViewState.IdRef="Sequence_51">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign Exists Window Play" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_7">
+                      <Assign DisplayName="Assign Exists Window Play" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_7">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">
                             <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">isDisplayedPlay</CSharpReference>
@@ -231,10 +243,10 @@
                       </Assign>
                       <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Play' Play" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                         <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="945, 1191, 188, 56" CvTextArea="1022, 1211, 33, 18" CvTextArgument="Play" CvType="Button" DesignTimeRectangle="949, 1195, 180, 48" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' type='button' class='Welcome-module_button__ZG0Zh' check:innerText='Play' /&gt;" Guid="a6eb7680-41b1-4385-a3ab-b9978a92913f" InformativeScreenshot="d3aed315d6ed7b34174402124c75bc89.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="826, 1237, 188, 57" CvTextArea="903, 1257, 33, 18" CvTextArgument="Play" CvType="Button" DesignTimeRectangle="830, 1241, 180, 48" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' type='button' class='Welcome-module_button__ZG0Zh' check:innerText='Play' /&gt;" Guid="7a1a9ee1-a9e7-4f73-b694-df1e6ced2886" InformativeScreenshot="d3aed315d6ed7b34174402124c75bc89.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CvElementArea="745, 1192, 187, 54" CvTextArea="818, 1212, 42, 17" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="749, 1195, 180, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='Welcome-module_button__ZG0Zh Welcome-module_secondary__fv3cc' aaname='Log in' check:innerText='Log in' /&gt;" SearchSteps="FuzzySelector, CV" />
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CvElementArea="626, 1238, 187, 54" CvTextArea="699, 1258, 42, 17" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="630, 1241, 180, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='Welcome-module_button__ZG0Zh Welcome-module_secondary__fv3cc' aaname='Log in' check:innerText='Log in' /&gt;" SearchSteps="FuzzySelector, CV" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>
@@ -243,30 +255,31 @@
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.Target>
-                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" DesignTimeRectangle="539, 1195, 600, 56" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='Welcome-module_buttonContainer__K4GEw' tag='DIV' aaname='' check:innerText='How to play&amp;#xD;&amp;#xA;Log in&amp;#xD;&amp;#xA;Play' /&gt;" Guid="167c8001-a7f3-49c1-a9a8-d2c082ed0da5" InformativeScreenshot="f05c7e7feca8e44a4bbf5c23dae35ed7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="826, 1237, 188, 57" CvTextArea="903, 1257, 33, 18" CvTextArgument="Play" CvType="Button" DesignTimeRectangle="830, 1241, 180, 48" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Play' tag='BUTTON' type='button' class='Welcome-module_button__ZG0Zh' check:innerText='Play' /&gt;" Guid="557a3fe3-1c87-4361-8cea-aee4ca2b93ef" InformativeScreenshot="ac775294049f125fdebefec4431193ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CvElementArea="792, 910, 93, 91" CvType="Icon" DesignTimeRectangle="790, 908, 97, 95" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGEAAABfCAYAAAD4dql+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQWSURBVHhe7Z3BS1RBHMf3H9DCTEx3Lx1CMghCK1sPaWpFBwuUEly7dKlDkOEKkgbRMbyk4Ap6z1OnRC+ewnNXLyL+IVO/bTdmxl87v3k7T2fd7w8+F318Z/x93sx78nRf5vj4SIGzBRIiABIiABIiABIiABIiABIiABIioC4J+/s/1dbWNzU7+04NDNxtOiYnJ9Xy8pdyD7j+SEksgRqfyWRAhWw2Wz4puV658JZAA9FZwE2k2SERdHJyfauFtwQIqA2J8N2evCRwW9DgYF4tLS2pvb09dXh4mJjd3V0jN5/Ps8fVQy6XM8bgjvFhc3NTLSwsGJkEieD69z+8JNiDFQrTKlTZEqampirfCVd6fi6XrXy1/iIhejbhsy2JJdBdgD4Inakhq5ElUG1sbBj5tG1zfeQQS7C3orW1tcrwYarRJdirwWdLEkuge2J9kIODg8rwYarRJVDl8/eMMaS3rGIJ9l0RJJwsSBCUng8JTEGCAEhwFyQISs+HBKYgQQAkuAsSBKXnQwJTkCAAEtwFCYLS8yGBqdOXkKt8NVxBgqD0fEhgChIEQIK7Tl3C/HxRrax8DQY1Xc+nJs3NzZ2gWPSl+A8zP8vO4y8rLKurtaE562OkLgG4gYQIgIQISF3C4uKHoBQKBSO/70ar+vT2alD0fGLi/VM1MftMjUwP/WFYjRKFKg/KjBVGyjycqTJa5tHMmMHjl2OqrbPNyE9dQvi7ox0jf3y4Xf36fjsoen53tku92XoVlO7eK8YYDS/h9YtutpH1oOdDAlM7O+lK2F6/aeT33+ljG1kPkOAAEgS1vr5u5EMCQ/oSSkY+JDBAghtIcAAJgoIEAWlLKJUgwQkkuIEEB5AgKEgQAAluIMEBJAgKEgRAghtIcAAJgiqV1ox8SGCwJdA/k29v/wiG/RkR9Hhz43NPMOxnzCRh/OOToLRcbjHGSF0CcAMJEQAJEZC6hJ7714Kj57d2tLDH1IOeT3DH1MOpXxMKq8/ZO4Sk0IVNz78+1MMeVw96/rn4kxdIOAkkCNDzIYEBEgRAghtIEKDnQwIDJAiABDeQIEDPhwQGSBAACW4gQYCeDwkMkCAAEtxAggA9HxIYIEGA/anx1DRuIkk5DxLshzpcHznEEugVJfoA9CSJm0hSGl0C7Qx6Pn3KPtdHDrEEWlr6IO2dl4KuhkaXYG9FqUgg7OvCxY4Lqn/yFjspXxpVAq0AWwDh83IjLwn2aqjS2tFa3g9pMkmx91N60J/t7QqKnk8SuHn4oOfp+L7my0sCYb9bB5jQbsH1rRbeEghaEfTOGG4SzYzvCqiSSAJBImhV0AWoWYXQz01Q86W/E3AklmBDk2g2uD4kIZgEkBxIiABIiABIiABIiABIiABIiABIiABIOHOO1G8Ul4xSBWws5QAAAABJRU5ErkJggg==" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvElementArea="626, 1238, 187, 54" CvTextArea="699, 1258, 42, 17" CvTextArgument="Log in" CvType="Button" DesignTimeRectangle="630, 1241, 180, 48" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='Welcome-module_button__ZG0Zh Welcome-module_secondary__fv3cc' aaname='Log in' check:innerText='Log in' /&gt;" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>
                   </uix:NCheckState.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NCheckState>
-                <uix:NCheckState DisplayName="Check App State 'How To Play' Default" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="688,651" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
+                <uix:NCheckState sap2010:Annotation.AnnotationText="Windows - How To Play" DisplayName="Check App State 'How To Play' Default" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,666" sap2010:WorkflowViewState.IdRef="NCheckState_7" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target Appears How To Play Default" sap:VirtualizedContainerService.HintSize="496,394" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                    <Sequence DisplayName="Target Appears How To Play Default" sap:VirtualizedContainerService.HintSize="496,386" sap2010:WorkflowViewState.IdRef="Sequence_52">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign Exists Window How To Play" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_8">
+                      <Assign DisplayName="Assign Exists Window How To Play" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_8">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">
                             <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">isDisplayedHowToPlayDefault</CSharpReference>
@@ -278,10 +291,10 @@
                       </Assign>
                       <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'How To Play' How To Play Default Close" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                         <uix:NClick.Target>
-                          <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="933, 789, 29, 29" CvType="CloseButton" DesignTimeRectangle="939, 796, 18, 18" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="8660c2c7-7830-4c51-aef2-02fa103a5f61" InformativeScreenshot="86afdf1c6da94ce9f3a6ac022c2af4fe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="927, 841, 30, 30" CvType="CloseButton" DesignTimeRectangle="934, 848, 17, 18" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='path' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='path' type='' class='' aaname='' /&gt;" Guid="00b38811-980f-454d-8cbd-661551459e19" InformativeScreenshot="fa5ec88408456b58dc8af2a8f488b0fc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                             <uix:TargetAnchorable.Anchors>
-                              <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                <uix:Target CvTextArea="506, 852, 141, 30" CvTextArgument="How To Play" CvType="Text" DesignTimeRectangle="509, 851, 422, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='Modal-module_heading__u2uxI Modal-module_newHeading__Ah45w' aaname='How To Play' check:innerText='How To Play' /&gt;" SearchSteps="FuzzySelector, CV" />
+                              <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <uix:Target CvTextArea="500, 904, 141, 29" CvTextArgument="How To Play" CvType="Text" DesignTimeRectangle="504, 903, 422, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='Modal-module_heading__u2uxI Modal-module_newHeading__Ah45w' aaname='How To Play' check:innerText='How To Play' /&gt;" SearchSteps="FuzzySelector, CV" />
                               </scg:List>
                             </uix:TargetAnchorable.Anchors>
                           </uix:TargetAnchorable>
@@ -290,22 +303,23 @@
                     </Sequence>
                   </uix:NCheckState.IfExists>
                   <uix:NCheckState.Target>
-                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvTextArea="506, 852, 141, 30" CvTextArgument="How To Play" CvType="Text" DesignTimeRectangle="509, 851, 422, 30" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='Modal-module_heading__u2uxI Modal-module_newHeading__Ah45w' aaname='How To Play' check:innerText='How To Play' /&gt;" Guid="0f75c3ee-c9ae-4675-8acd-3d9b9193e557" InformativeScreenshot="f3f0538b119f3356437558004b49bc39.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" DesignTimeRectangle="488, 858, 454, 622" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='Modal-module_topWrapper__MvEd5' parentid='help-dialog' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='Modal-module_topWrapper__MvEd5' parentid='help-dialog' tag='DIV' type='' aaname='' check:innerText='How To Play&amp;#xD;&amp;#xA;Guess the Wordle in 6 tries.&amp;#xD;&amp;#xA;Each guess must be a valid 5-letter word.&amp;#xD;&amp;#xA;The color of the' /&gt;" Guid="610de175-30ca-4c95-b9d9-d000b9225e2f" InformativeScreenshot="414e91bdb52f4990191ff7a50012876f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
                       <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CvTextArea="507, 886, 234, 18" CvTextArgument="Guess the Wordle in 6 tries." CvType="Text" DesignTimeRectangle="509, 885, 422, 24" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' class='Help-module_subheading__mbRG9' aaname='Guess the Wordle in 6 tries.' check:innerText='Guess the Wordle in 6 tries.' /&gt;" SearchSteps="FuzzySelector, CV" />
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvTextArea="659, 500, 109, 30" CvTextArgument="Wordle" CvType="Text" DesignTimeRectangle="378, 499, 673, 36" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='AppHeader-module_title__EQr6V' aaname='Wordle' check:innerText='Wordle' /&gt;" SearchSteps="FuzzySelector, CV" />
                         </scg:List>
                       </uix:TargetAnchorable.Anchors>
                     </uix:TargetAnchorable>
                   </uix:NCheckState.Target>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </uix:NCheckState>
-                <If DisplayName="If How To Play False" sap:VirtualizedContainerService.HintSize="688,1158" sap2010:WorkflowViewState.IdRef="If_11">
+                <If DisplayName="If How To Play False" sap:VirtualizedContainerService.HintSize="540,57" sap2010:WorkflowViewState.IdRef="If_11">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_41">isDisplayedHowToPlayDefault == false</CSharpValue>
@@ -313,27 +327,27 @@
                   </If.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then Validate Hard Mode" sap:VirtualizedContainerService.HintSize="602,880" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <Sequence DisplayName="Then Validate Hard Mode" sap:VirtualizedContainerService.HintSize="602,864" sap2010:WorkflowViewState.IdRef="Sequence_41">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NCheckState DisplayName="Check App State 'Wordle' Hard Mode" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,795" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
+                      <uix:NCheckState DisplayName="Check App State 'Wordle' Hard Mode" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="540,779" sap2010:WorkflowViewState.IdRef="NCheckState_8" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                         <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target Appears Hard Mode" sap:VirtualizedContainerService.HintSize="496,555" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                          <Sequence DisplayName="Target Appears Hard Mode" sap:VirtualizedContainerService.HintSize="496,539" sap2010:WorkflowViewState.IdRef="Sequence_53">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Assign DisplayName="Assign Exists Window Hard Mode" sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_9">
+                            <Assign DisplayName="Assign Exists Window Hard Mode" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_9">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:Boolean">
                                   <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_40">isDisplayedHardMode</CSharpReference>
@@ -343,7 +357,7 @@
                                 <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'For an' Hard Mode Close" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'For an' Hard Mode Close" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" CvElementArea="893, 1001, 29, 29" CvType="CloseButton" DesignTimeRectangle="893, 1002, 30, 30" DesignTimeScaleFactor="1" ElementType="Icon" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='game-icon' aaname='' /&gt;" Guid="4c6428c0-99ce-4f21-980b-7825feb92f04" InformativeScreenshot="21e3bcba77c9b5ced5c050a10c09159a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
                                   <uix:TargetAnchorable.Anchors>
@@ -386,7 +400,7 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <If DisplayName="If How To Play &amp; Hard Mode False" sap:VirtualizedContainerService.HintSize="688,1564" sap2010:WorkflowViewState.IdRef="If_13">
+                <If DisplayName="If How To Play &amp; Hard Mode False" sap:VirtualizedContainerService.HintSize="540,57" sap2010:WorkflowViewState.IdRef="If_13">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_45">isDisplayedHardMode == false &amp;&amp; isDisplayedHowToPlayDefault == false</CSharpValue>
@@ -395,25 +409,25 @@
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then Validate How To Play Small" sap:VirtualizedContainerService.HintSize="654,1286" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                    <Sequence DisplayName="Then Validate How To Play Small" sap:VirtualizedContainerService.HintSize="654,1230" sap2010:WorkflowViewState.IdRef="Sequence_48">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,596" sap2010:WorkflowViewState.IdRef="CommentOut_8">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,548" sap2010:WorkflowViewState.IdRef="CommentOut_8">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="556,477" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="556,437" sap2010:WorkflowViewState.IdRef="Sequence_55">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NCheckState DisplayName="Check App State" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,392" sap2010:WorkflowViewState.IdRef="NCheckState_9" Version="V3">
+                            <uix:NCheckState DisplayName="Check App State" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="494,352" sap2010:WorkflowViewState.IdRef="NCheckState_9" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
                               <uix:NCheckState.IfExists>
                                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_54">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -433,21 +447,21 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </ui:CommentOut>
-                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,605" sap2010:WorkflowViewState.IdRef="CommentOut_9">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="592,597" sap2010:WorkflowViewState.IdRef="CommentOut_9">
                         <ui:CommentOut.Body>
-                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,503" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,495" sap2010:WorkflowViewState.IdRef="Sequence_57">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Sequence How To Play Small" sap:VirtualizedContainerService.HintSize="450,418" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                            <Sequence DisplayName="Sequence How To Play Small" sap:VirtualizedContainerService.HintSize="450,410" sap2010:WorkflowViewState.IdRef="Sequence_56">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="388,147" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9">
+                              <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="388,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_9">
                                 <ui:WaitUiElementAppear.FoundElement>
                                   <OutArgument x:TypeArguments="ui:UiElement">
                                     <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_41">uiElementFirst</CSharpReference>
@@ -508,22 +522,22 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <Sequence DisplayName="Sequence Log In" sap:VirtualizedContainerService.HintSize="688,1088" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <Sequence DisplayName="Sequence Log In" sap:VirtualizedContainerService.HintSize="540,50" sap2010:WorkflowViewState.IdRef="Sequence_50">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="610,973" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="610,965" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                     <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="574,869" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="574,861" sap2010:WorkflowViewState.IdRef="Sequence_19">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Sequence Intro Second" sap:VirtualizedContainerService.HintSize="512,784" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Sequence Intro Second" sap:VirtualizedContainerService.HintSize="512,776" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="ui:UiElement" Name="uiElementSecond">
                               <Variable.Default>
@@ -536,7 +550,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="450,147" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
+                          <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2">
                             <ui:WaitUiElementAppear.FoundElement>
                               <OutArgument x:TypeArguments="ui:UiElement">
                                 <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">uiElementSecond</CSharpReference>
@@ -601,23 +615,42 @@
                   </ui:CommentOut>
                 </Sequence>
               </Sequence>
-              <Sequence DisplayName="Sequence Guess01" sap:VirtualizedContainerService.HintSize="750,864" sap2010:WorkflowViewState.IdRef="Sequence_28">
+              <Sequence DisplayName="Sequence Guess01" sap:VirtualizedContainerService.HintSize="602,826" sap2010:WorkflowViewState.IdRef="Sequence_28">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="1" DisplayName="Type Into Argument Guess" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,265" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Version="V3">
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="1" DisplayName="Type Into Argument Guess" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" DesignTimeRectangle="465, 550, 500, 1467" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='wordle-app-game' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='wordle-app-game' tag='DIV' type='' class='Board-module_boardContainer__TBHNL' aaname='' /&gt;" Guid="2adb4c84-f9a3-4e19-ba00-3c96df99db27" InformativeScreenshot="d8deacfd769a18e2963f6cee284a5617.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvTextArea="659, 499, 109, 32" CvTextArgument="Wordle" CvType="Text" DesignTimeRectangle="659, 499, 110, 31" ElementType="Text" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
                   <uix:NTypeInto.Text>
                     <InArgument x:TypeArguments="x:String">
                       <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_87">in_Word</CSharpValue>
                     </InArgument>
                   </uix:NTypeInto.Text>
                 </uix:NTypeInto>
-                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="3" DisplayName="Keyboard Shortcuts Argument Guess" sap:VirtualizedContainerService.HintSize="388,219" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
-                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="1" DisplayName="Type Into Argument Guess" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,250" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="Z" Version="V3" />
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DelayAfter="3" DisplayName="Keyboard Shortcuts Argument Guess" sap:VirtualizedContainerService.HintSize="388,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V3" />
+                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayBetweenKeys="1" DisplayName="Type Into Argument Guess" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,243" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="dd1025a5-c378-4240-8086-7c0e2115d6dc" Text="Z" Version="V3">
+                  <uix:NTypeInto.Target>
+                    <uix:TargetAnchorable BrowserURL="https://www.nytimes.com/games/wordle/index.html" DesignTimeRectangle="465, 550, 500, 1467" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='wordle-app-game' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='wordle-app-game' tag='DIV' type='' class='Board-module_boardContainer__TBHNL' aaname='' /&gt;" Guid="6b8a131e-a8ff-47e4-9d0b-4454d5a88ed9" InformativeScreenshot="d8deacfd769a18e2963f6cee284a5617.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                          <uix:Target CvTextArea="659, 499, 109, 32" CvTextArgument="Wordle" CvType="Text" DesignTimeRectangle="659, 499, 110, 31" ElementType="Text" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NTypeInto.Target>
+                </uix:NTypeInto>
               </Sequence>
-              <Sequence DisplayName="Sequence Validate Guess02Letter01" sap:VirtualizedContainerService.HintSize="750,1817" sap2010:WorkflowViewState.IdRef="Sequence_69">
+              <Sequence DisplayName="Sequence Validate Guess02Letter01" sap:VirtualizedContainerService.HintSize="602,691" sap2010:WorkflowViewState.IdRef="Sequence_69">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="ui:UiElement" Name="elementGuess02Letter01" />
                 </Sequence.Variables>
@@ -626,21 +659,21 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" ContinueOnError="True" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="644,147" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_13">
+                <ui:WaitUiElementAppear WaitActive="{x:Null}" WaitVisible="{x:Null}" ContinueOnError="True" DisplayName="Find Element 'DIV'" sap:VirtualizedContainerService.HintSize="530,139" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_13">
                   <ui:WaitUiElementAppear.FoundElement>
                     <OutArgument x:TypeArguments="ui:UiElement">
                       <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_49">elementGuess02Letter01</CSharpReference>
                     </OutArgument>
                   </ui:WaitUiElementAppear.FoundElement>
                   <ui:WaitUiElementAppear.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3c2793c6-2c59-44e9-bece-6de578b6786c" InformativeScreenshot="96ac2b11704769117bcf759501dbe4aa" Selector="&lt;webctrl aria-label='1st letter, Z' aria-role='img' tag='DIV' /&gt;" TimeoutMS="3000">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3c2793c6-2c59-44e9-bece-6de578b6786c" InformativeScreenshot="f53620bb624e0f10e3136a15f5172dc7" Selector="&lt;webctrl aria-label='1st letter, Z' aria-role='img' tag='DIV' /&gt;" TimeoutMS="3000">
                       <ui:Target.WaitForReady>
                         <InArgument x:TypeArguments="ui:WaitForReady" />
                       </ui:Target.WaitForReady>
                     </ui:Target>
                   </ui:WaitUiElementAppear.Target>
                 </ui:WaitUiElementAppear>
-                <If sap:VirtualizedContainerService.HintSize="644,418" sap2010:WorkflowViewState.IdRef="If_19">
+                <If sap:VirtualizedContainerService.HintSize="530,382" sap2010:WorkflowViewState.IdRef="If_19">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_88">elementGuess02Letter01 != null</CSharpValue>
@@ -676,21 +709,21 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="644,1137" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,48" sap2010:WorkflowViewState.IdRef="CommentOut_12">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="608,1033" sap2010:WorkflowViewState.IdRef="Sequence_74">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="608,1025" sap2010:WorkflowViewState.IdRef="Sequence_74">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This code show how to iterate over all the attributes in a UiElement, get the values and print them." DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,948" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This code show how to iterate over all the attributes in a UiElement, get the values and print them." DisplayName="For Each" sap:VirtualizedContainerService.HintSize="546,940" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:String">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:String" Name="attribute" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,719" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,711" sap2010:WorkflowViewState.IdRef="Sequence_64">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:Object" Name="value" />
                               </Sequence.Variables>
@@ -699,7 +732,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="Assign_13">
+                              <Assign sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_13">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">
                                     <CSharpReference x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">value</CSharpReference>
@@ -764,8 +797,15 @@
                       </ui:ForEach>
                     </Sequence>
                   </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:CommentOut>
               </Sequence>
+              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="602,204" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(back)][u(hk)]" Version="V3" />
             </Sequence>
           </ActivityAction>
         </uix:NApplicationCard.Body>
@@ -775,7 +815,7 @@
           </OutArgument>
         </uix:NApplicationCard.OutUiElement>
         <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="121, 353, 1079, 1195" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAVlJREFUWEftl8FKw0AQhgNKA42BgLbQnPaSS/UgRDznLXppb558H1/CS/sqPsE+Qh9hnX+zwY3OThNoa8Ud+KDpzmS+bJuBTVw8EltCnwn0UoQNfNgXRWGapgmCdcpj13yG5GEdPQk8uLUxWmsjBQqVUu4qHEPy0MuJ7iCgUXQojimAqOsaO4Cf43cEkBcFosDlCBC2SKIbMNyaj5RXVZXucHmtAC5gJNHd+OkhF8mzK5tX3i9E0unkSwANDgUGRzlPzcfuWcRKzG7M6/uLSLlcjBPAtuHmXFOfKHARAnfqlm3qc1IB/Mu5pj5/TwCD5GQCxI+p9R3kAMwCiTy7tnn5DH/GML1BlE6p2E2oEK6AXfMZmdcK4Atum3ywZUNfr9GvYRSIAv9eYJtmE7N+W7GJHccU2FAv6gvs0QwHRByTbHEIDA6Icms+Q/LcEELP3gn53MdzevAk+QTlnkHNqSljXQAAAABJRU5ErkJggg==" InformativeScreenshot="8cb0e08630d2031339eaaa8f457a656c.jpg" Selector="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" Title="New Incognito Tab" Url="https://www.nytimes.com/games/wordle/index.html" />
+          <uix:TargetApp Area="-2171, -11, 2182, 3862" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAALEgAACxIB0t1+/AAAAVlJREFUWEftl8FKw0AQhgNKA42BgLbQnPaSS/UgRDznLXppb558H1/CS/sqPsE+Qh9hnX+zwY3OThNoa8Ud+KDpzmS+bJuBTVw8EltCnwn0UoQNfNgXRWGapgmCdcpj13yG5GEdPQk8uLUxWmsjBQqVUu4qHEPy0MuJ7iCgUXQojimAqOsaO4Cf43cEkBcFosDlCBC2SKIbMNyaj5RXVZXucHmtAC5gJNHd+OkhF8mzK5tX3i9E0unkSwANDgUGRzlPzcfuWcRKzG7M6/uLSLlcjBPAtuHmXFOfKHARAnfqlm3qc1IB/Mu5pj5/TwCD5GQCxI+p9R3kAMwCiTy7tnn5DH/GML1BlE6p2E2oEK6AXfMZmdcK4Atum3ywZUNfr9GvYRSIAv9eYJtmE7N+W7GJHccU2FAv6gvs0QwHRByTbHEIDA6Icms+Q/LcEELP3gn53MdzevAk+QTlnkHNqSljXQAAAABJRU5ErkJggg==" InformativeScreenshot="b8bb8806f18a90348f21c8ce978b43e8.jpg" Selector="&lt;html app='chrome.exe' title='Wordle - The New York Times' /&gt;" Title="New Incognito Tab" Url="https://www.nytimes.com/games/wordle/index.html" />
         </uix:NApplicationCard.TargetApp>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -785,7 +825,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </uix:NApplicationCard>
     </Sequence>
-    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="496,292" sap2010:WorkflowViewState.IdRef="Sequence_76">
+    <Sequence DisplayName="Sequence Result" sap:VirtualizedContainerService.HintSize="760,284" sap2010:WorkflowViewState.IdRef="Sequence_76">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -804,7 +844,7 @@
         </ui:LogMessage.Message>
       </ui:LogMessage>
     </Sequence>
-    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Validate_WordWordleGame.End;" sap:VirtualizedContainerService.HintSize="496,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
+    <ui:LogMessage DisplayName="Log Message Wordle-Default-Word-Engine.Validate_WordWordleGame.End;" sap:VirtualizedContainerService.HintSize="760,164" sap2010:WorkflowViewState.IdRef="LogMessage_2">
       <ui:LogMessage.Level>
         <InArgument x:TypeArguments="ui:LogLevel">
           <CSharpValue x:TypeArguments="ui:LogLevel" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">UiPath.Core.Activities.LogLevel.Info</CSharpValue>
